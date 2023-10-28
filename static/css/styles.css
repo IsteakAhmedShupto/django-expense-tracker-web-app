@@ -1,0 +1,308 @@
+/* base.html */
+
+.navbar {
+  background-color: var(--darker-gray);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+.navbar__lists {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar__lists > li {
+  list-style-type: none;
+}
+
+.navbar__lists > li > a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar__lists {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* welcome.html */
+
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  text-align: center;
+  padding: 1rem;
+}
+
+.welcome__title {
+  margin-bottom: 0.5rem;
+}
+
+.welcome__link {
+  font-size: 1.7rem;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.welcome__card {
+  padding: 0.5rem;
+  margin: 3rem 0;
+}
+
+.welcome__card__title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome__card__lists {
+  list-style-type: none;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.welcome__card__lists > li {
+  padding: 1rem 0;
+  box-shadow: var(--shadow);
+}
+
+.welcome__link {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .welcome__title {
+    font-size: 1.4rem;
+  }
+
+  .welcome__link {
+    font-size: 1.2rem;
+  }
+
+  .welcome__card__title {
+    font-size: 1.1rem;
+  }
+
+  .welcome__card__lists {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .welcome__card__lists > li {
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow);
+  }
+}
+
+/* show_books.html */
+
+.showbooks-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showbooks__title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.showbooks__expenses {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.showbooks__lists__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.showbooks__lists {
+  border-radius: 5px;
+  max-width: 400px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 1rem;
+}
+
+.showbooks__lists > li {
+  margin: 0.5rem 0;
+}
+
+.showbooks__lists > li:nth-child(1) {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.showbooks__lists > li > a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1320px) {
+  .showbooks__title {
+    margin-top: 5rem;
+  }
+
+  .showbooks__lists__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* add_book.html */
+
+.addbook-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addbook__title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.addbook__form {
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.addbook__form > div > input {
+  padding: 1rem 1.25rem;
+  width: 400px;
+  margin: 0.5rem 0;
+  border: 1px solid var(--lighter-gray);
+}
+
+.addbook__submit {
+  padding: 1rem 1.25rem;
+  width: 400px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  background-color: var(--darker-gray);
+  color: var(--white);
+  border: 1px solid var(--lighter-gray);
+}
+
+/* logout.html */
+
+.logout-container {
+  text-align: center;
+}
+
+.logout__title {
+  margin: 2rem 0;
+}
+
+.logout__qs {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.logout__submit {
+  padding: 1rem 1.25rem;
+  font-size: 1.2rem;
+  background-color: var(--darker-gray);
+  color: var(--white);
+  border: 1px solid var(--lighter-gray);
+  cursor: pointer;
+}
+
+/* login.html */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form > input {
+  padding: 1rem 1.25rem;
+  width: 400px;
+  margin: 0.5rem 0;
+  border: 1px solid var(--lighter-gray);
+}
+
+.login__submit {
+  padding: 1rem 1.25rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* register.html */
+
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__form > input {
+  padding: 1rem 1.25rem;
+  width: 400px;
+  margin: 0.5rem 0;
+  border: 1px solid var(--lighter-gray);
+}
+
+.register__submit {
+  padding: 1rem 1.25rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

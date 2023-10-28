@@ -1,0 +1,64 @@
+{% extends 'templates/base.html' %} {% block content %}
+<div>
+  <form action="{% url 'book_edit' addbook.pk %}" method="POST">
+    {% csrf_token %}
+    <div class="title-container">
+      <input
+        type="text"
+        name="title"
+        value="{{ initial.title }}"
+        placeholder="Enter title"
+      />
+    </div>
+    <div class="subtitle-container">
+      <input
+        type="text"
+        name="subtitle"
+        value="{{ initial.subtitle }}"
+        placeholder="Enter subtitle"
+      />
+    </div>
+    <div class="authors-container">
+      <input
+        type="text"
+        name="authors"
+        value="{{ initial.authors }}"
+        placeholder="Enter authors' name (Use comma to separate different authors)"
+      />
+    </div>
+    <div class="publisher-container">
+      <input
+        type="text"
+        name="publisher"
+        value="{{ initial.publisher }}"
+        placeholder="Enter publisher's name"
+      />
+    </div>
+    <div class="published_date-container">
+      <input
+        type="text"
+        name="published_date"
+        value="{{ initial.published_date }}"
+        placeholder="Enter published date"
+      />
+    </div>
+    <div class="text-container">
+      <input
+        type="text"
+        name="category"
+        value="{{ initial.category }}"
+        placeholder="Enter category"
+      />
+    </div>
+    <div class="distribution_expense-container">
+      <input
+        type="number"
+        name="distribution_expense"
+        value="{{ initial.distribution_expense }}"
+        placeholder="Enter distribution expense"
+      />
+    </div>
+    <input type="submit" value="Save the changes" />
+  </form>
+</div>
+{% endblock %}

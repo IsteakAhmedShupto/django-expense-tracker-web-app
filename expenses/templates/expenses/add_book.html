@@ -1,0 +1,46 @@
+{% extends 'templates/base.html' %} {% block content %}
+<div class="addbook-container">
+  <h3 class="addbook__title">Add a book to your books list 📃</h3>
+  <form method="POST" class="addbook__form">
+    {% csrf_token %}
+    <div class="title-container">
+      <input type="text" name="title" placeholder="Enter title" />
+    </div>
+    <div class="subtitle-container">
+      <input type="text" name="subtitle" placeholder="Enter subtitle" />
+    </div>
+    <div class="authors-container">
+      <input
+        type="text"
+        name="authors"
+        placeholder="Enter authors' name (Use comma to separate different authors)"
+      />
+    </div>
+    <div class="publisher-container">
+      <input
+        type="text"
+        name="publisher"
+        placeholder="Enter publisher's name"
+      />
+    </div>
+    <div class="published_date-container">
+      <input
+        type="text"
+        name="published_date"
+        placeholder="Enter published date"
+      />
+    </div>
+    <div class="text-container">
+      <input type="text" name="category" placeholder="Enter category" />
+    </div>
+    <div class="distribution_expense-container">
+      <input
+        type="number"
+        name="distribution_expense"
+        placeholder="Enter distribution expense"
+      />
+    </div>
+    <input type="submit" value="Add book" class="addbook__submit" />
+  </form>
+</div>
+{% endblock %}
