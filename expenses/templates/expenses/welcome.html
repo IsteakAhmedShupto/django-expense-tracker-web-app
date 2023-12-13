@@ -1,0 +1,23 @@
+{% extends 'templates/base.html' %} {% block content %}
+<div class="welcome-container">
+  <div class="welcome">
+    <h1 class="welcome__title">
+      Welcome to Expense Tracker for your books application!
+    </h1>
+    <div class="welcome__card">
+      <h3 class="welcome__card__title">Features of this application</h3>
+      <ul class="welcome__card__lists">
+        <li>Desktop and mobile friendly user interface</li>
+        <li>You can create a book and add related datas</li>
+        <li>You can update your data anytime</li>
+        <li>When needed you can delete any of your book data</li>
+        <li>You can visualize all your books data at once</li>
+        <li>You can see your total expenditure for all of your books</li>
+      </ul>
+    </div>
+    <a class="welcome__link" href="{% url 'show_books' %}"
+      >Click here to access</a
+    >
+  </div>
+</div>
+{% endblock %}

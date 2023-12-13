@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/root.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h3 class="navbar__logo">Expense Tracker</h3>
+      <ul class="navbar__lists">
+        {% if current_user.is_authenticated %}
+        <li>
+          <a href="{% url 'show_books' %}">Show all books</a>
+        </li>
+        <li>
+          <a href="{% url 'add_book' %}">Add a book</a>
+        </li>
+        <li>
+          <a href="{% url 'logout_page' %}">Logout</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'login' %}">Login</a>
+        </li>
+        <li>
+          <a href="{% url 'register' %}">Register</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

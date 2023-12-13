@@ -1,0 +1,14 @@
+{% extends "templates/base.html" %} {% block content %}
+<div class="login-container">
+  <div class="login">
+    <h1 class="login__title">Login</h1>
+    {% include 'templates/alerts.html' %}
+    <form action="{% url 'login' %}" method="POST" class="login__form">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Username" />
+      <input type="password" name="password" placeholder="Password" />
+      <input type="submit" value="Login" class="login__submit" />
+    </form>
+  </div>
+</div>
+{% endblock %}

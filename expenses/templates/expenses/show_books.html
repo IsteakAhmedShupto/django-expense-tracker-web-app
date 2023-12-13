@@ -1,0 +1,33 @@
+{% extends 'templates/base.html' %} {% block content %}
+
+<div class="showbooks-container">
+  <div class="showbooks">
+    {% if current_user.is_authenticated %}
+    <h3 class="showbooks__title">Welcome, {{ current_user }} 🎉</h3>
+
+    <h3 class="showbooks__expenses">
+      Your total expenses : {{ total_expense }} dollars 💰
+    </h3>
+
+    <div class="showbooks__lists__container">
+      {% for book in allbooks %}
+      <ul class="showbooks__lists">
+        <li>{{ book.title }}</li>
+        <li>{{ book.subtitle }}</li>
+        <li>{{ book.authors}}</li>
+        <li>{{ book.publisher}}</li>
+        <li>{{ book.published_date}}</li>
+        <li>{{ book.category}}</li>
+        <li>Price : {{ book.distribution_expense}} dollars</li>
+        <li><a href="{% url 'book_edit' id=book.id %}">Edit</a></li>
+        <li>
+          <a href="{% url 'book_delete' id=book.id %}">Delete this book</a>
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

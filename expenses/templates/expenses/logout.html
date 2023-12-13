@@ -1,0 +1,13 @@
+{% extends "templates/base.html" %} {% block content %}
+<div class="logout-container">
+  <div class="logout">
+    <h1 class="logout__title">Logout</h1>
+    <p class="logout__qs">Are you sure you want to log out?</p>
+    <form action="{% url 'logout' %}" method="post" class="logout__form">
+      {% csrf_token %}
+      <input type="submit" value="Logout" class="logout__submit" />
+    </form>
+  </div>
+</div>
+
+{% endblock %}

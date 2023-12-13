@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/root.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h3 class="navbar__logo">Expense Tracker</h3>
+      <ul class="navbar__lists">
+        {% if current_user.is_authenticated %}
+        <li>
+          <a href="{% url 'login' %}">Login</a>
+        </li>
+        <li>
+          <a href="{% url 'register' %}">Register</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'show_books' %}">Show all books</a>
+        </li>
+        <li>
+          <a href="{% url 'add_book' %}">Add a book</a>
+        </li>
+        <li>
+          <a href="{% url 'logout_page' %}">Logout</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <div>
+      <div class="addbook-container">
+        <form
+          action="{% url 'book_edit' addbook.pk %}"
+          method="POST"
+          class="addbook__form"
+        >
+          {% csrf_token %}
+          <div class="title-container">
+            <input
+              type="text"
+              name="title"
+              value="{{ initial.title }}"
+              placeholder="Enter title"
+            />
+          </div>
+          <div class="subtitle-container">
+            <input
+              type="text"
+              name="subtitle"
+              value="{{ initial.subtitle }}"
+              placeholder="Enter subtitle"
+            />
+          </div>
+          <div class="authors-container">
+            <input
+              type="text"
+              name="authors"
+              value="{{ initial.authors }}"
+              placeholder="Enter authors' name (Use comma to separate different authors)"
+            />
+          </div>
+          <div class="publisher-container">
+            <input
+              type="text"
+              name="publisher"
+              value="{{ initial.publisher }}"
+              placeholder="Enter publisher's name"
+            />
+          </div>
+          <div class="published_date-container">
+            <input
+              type="text"
+              name="published_date"
+              value="{{ initial.published_date }}"
+              placeholder="Enter published date"
+            />
+          </div>
+          <div class="text-container">
+            <input
+              type="text"
+              name="category"
+              value="{{ initial.category }}"
+              placeholder="Enter category"
+            />
+          </div>
+          <div class="distribution_expense-container">
+            <input
+              type="number"
+              name="distribution_expense"
+              value="{{ initial.distribution_expense }}"
+              placeholder="Enter distribution expense"
+            />
+          </div>
+          <input
+            type="submit"
+            value="Save the changes"
+            class="addbook__submit"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
